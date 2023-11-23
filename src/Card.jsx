@@ -5,9 +5,7 @@ export default function Card(props) {
 
   return (
     <div
-      className={`legend ${isHovered ? "hovered" : ""} ${
-        isClicked ? "clicked" : ""
-      }`}
+      className={`legend ${isHovered ? "hovered" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
