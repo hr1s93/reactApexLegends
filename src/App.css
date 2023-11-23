@@ -57,19 +57,20 @@ h2 {
 }
 @media (max-width: 1024px) {
   .legend {
-    width: 400px;
-    margin-left: 40px;
+    width: 25%;
   }
 }
 @media (max-width: 768px) {
-  .legends {
-    width: 400px;
-    margin-left: 120px;
+  .legend {
+    width: 65%;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 425px) {
   .legend {
-    width: 60%;
+    width: 70%;
+  }
+  .legends {
+    margin-left: 35px;
   }
 }
