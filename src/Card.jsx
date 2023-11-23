@@ -11,7 +11,8 @@ export default function Card(props) {
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setIsClicked(!isClicked)}
+      onTouchStart={() => setIsClicked(true)}
+      onTouchEnd={() => setIsClicked(false)}
     >
       {isHovered ? (
         <div className="new-content">
