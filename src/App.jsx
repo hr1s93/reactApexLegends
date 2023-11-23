@@ -24,8 +24,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log("Data:", data);
-
   if (loading) {
     return <p>Loading...</p>;
   }
