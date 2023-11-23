@@ -1,17 +1,37 @@
 import React, { useState } from "react";
 
 export default function Card(props) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleHover = () => {
+    setIsActive(true);
+  };
+
+  const handleUnhover = () => {
+    setIsActive(false);
+  };
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
+  const isTouchDevice = () => {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+  };
+
+  const hoverEvents = isTouchDevice()
+    ? { onTouchStart: handleHover, onTouchEnd: handleUnhover }
+    : { onMouseEnter: handleHover, onMouseLeave: handleUnhover };
+
+  const clickEvent = isTouchDevice() ? { onClick: handleClick } : {};
 
   return (
     <div
-      className={`legend ${isHovered ? "hovered" : ""}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onMouseDown={() => setIsHovered(true)}
-      onMouseUp={() => setIsHovered(false)}
+      className={`legend ${isActive ? "hovered" : ""}`}
+      {...hoverEvents}
+      {...clickEvent}
     >
-      {isHovered ? (
+      {isActive ? (
         <div className="new-content">
           <h2>{props.class}</h2>
           <p>{props.skills}</p>
