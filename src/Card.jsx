@@ -8,7 +8,8 @@ export default function Card(props) {
       className={`legend ${isHovered ? "hovered" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setIsHovered(!isHovered)}
+      onMouseDown={() => setIsHovered(true)}
+      onMouseUp={() => setIsHovered(false)}
     >
       {isHovered ? (
         <div className="new-content">
