@@ -14,7 +14,7 @@ export default function Card(props) {
       onTouchStart={() => setIsClicked(true)}
       onTouchEnd={() => setIsClicked(false)}
     >
-      {isHovered ? (
+      {isHovered || isClicked ? (
         <div className="new-content">
           <h2>{props.class}</h2>
           <p>{props.skills}</p>
